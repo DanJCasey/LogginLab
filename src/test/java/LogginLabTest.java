@@ -1,3 +1,6 @@
+import org.junit.Assert;
+import org.junit.Test;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -13,6 +16,7 @@ public class LogginLabTest {
     @org.junit.After
     public void tearDown() throws Exception {
     }
+
 
     @org.junit.Test
     public void thresholdExceeds() {
@@ -31,4 +35,23 @@ public class LogginLabTest {
             }
         }
     }
+
+    @Test
+    public void thresholdReachedTest() {
+        int finale = 10;
+
+        LogginLab labby = new LogginLab();
+        labby.setThreshold(finale);
+
+        for(int j = 1; j < finale; j++) {
+            if (labby.thresholdReached(j));
+            assertTrue(labby.thresholdReached(j));
+        }
+
+
+    }
+
+
+
+
 }
